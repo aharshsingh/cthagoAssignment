@@ -1,10 +1,12 @@
 {
   "users": [
     {
+      "userId": "67c80910f17e3c6a0b92414f",
       "userName": "aharsh",
       "email": "aharshsingh25@gmail.com",
-      "password": "656f32e7fc3b9a884396d88716110205e7204add48ff4d27496417bac45c90e84779cfde388312ce66dec2537405f69866e2f4d1ceab806646087eae8414f694",
-      "salt": "003feccdf045c92d1ff1ee2372457be7"
+      "password": "e3a2f57765be1c9d3f0dd9db88b312f1ee3168526bbd764adb8fd6cae75b67f80104954e4dc0380552815bd61f3705f2be9af3e2ff303756df4426bcb2f367db",
+      "salt": "99b7f581f0355aff54501678db115cb3",
+      "credits": 20
     }
   ]
 }

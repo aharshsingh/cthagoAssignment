@@ -3,6 +3,7 @@ const userFilePath = path.join(__dirname, "../../database/user.json");
 const readFile = require('../../utils/readFile.js');
 const {hashPassword} = require('../../utils/passwordHash.js');
 const writeFile = require('../../utils/writeFile.js');
+const generateId = require('../../utils/generateId.js')
 
 const registerController = {
     async register(req,res,next){
@@ -15,11 +16,14 @@ const registerController = {
                 return res.json({"error": "Email is already registered"})
             }
             const { salt, hashedPassword } = hashPassword(password);
+            const userId = generateId();
             const newUser = {
+                userId,
                 userName, 
                 email, 
                 password: hashedPassword,
-                salt
+                salt,
+                credits: 20
             }
             User.users.push(newUser)
             writeFile(User, userFilePath);
