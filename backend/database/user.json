@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "userName": "aharsh",
+      "email": "aharshsingh25@gmail.com",
+      "password": "656f32e7fc3b9a884396d88716110205e7204add48ff4d27496417bac45c90e84779cfde388312ce66dec2537405f69866e2f4d1ceab806646087eae8414f694",
+      "salt": "003feccdf045c92d1ff1ee2372457be7"
+    }
+  ]
+}
