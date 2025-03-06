@@ -1,7 +1,6 @@
 const fs = require("fs");
 
 function readFile(FilePath) {
-    console.log(FilePath)
     if (!fs.existsSync(FilePath)){
         return null;
     }
