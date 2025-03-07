@@ -31,7 +31,6 @@ const loginController = {
             writeFile(accessToken, accessTokenFilePath);
             return res.json(newLogin);
         } catch (error) {
-            console.log(error)
             return res.json({"error": "Internal server error"})
         }
     }

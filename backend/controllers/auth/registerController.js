@@ -10,7 +10,6 @@ const registerController = {
         try {
             const {userName, email, password} = req.body;
             let User = readFile(userFilePath);
-            // console.log(User)
             const exists = User.users.find(user => user.email === email);
             if(exists){
                 return res.json({"error": "Email is already registered"})
@@ -23,13 +22,13 @@ const registerController = {
                 email, 
                 password: hashedPassword,
                 salt,
-                credits: 20
+                credits: 20,
+                role: "user"
             }
             User.users.push(newUser)
             writeFile(User, userFilePath);
             return res.json(newUser);
         } catch (error) {
-            console.log(error)
             return res.json({"error": "Internal server error"})
         }
     }

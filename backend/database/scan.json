@@ -1,11 +1,32 @@
 {
   "scans": [
     {
-      "_id": "67c85e2a187ba7c8b84408ea",
+      "_id": "67c9d290d5f1603ae3db29e9",
       "userId": "67c803652961b92b77d26de9",
-      "fileName": "Django project",
-      "fileContent": "natural language translation engine for anncoumnet on railway station",
-      "createdAt": "2025-03-05T14:22:34.907Z"
+      "fileName": "reactJs",
+      "fileContent": "ReactJS is a popular JavaScript library developed by Facebook for building dynamic and interactive user interfaces. It is widely used for creating single-page applications (SPAs) and complex web applications due to its efficient rendering and component-based architecture. React allows developers to build reusable UI components, making development faster and more scalable. One of its key features is the virtual DOM, which optimizes performance by updating only the necessary parts of the user interface instead of reloading the entire page. React also supports state management, making it easy to handle data and user interactions. With its strong ecosystem, including tools like React Router and Redux, ReactJS continues to be a preferred choice for modern web development.",
+      "createdAt": "2025-03-06T16:51:28.342Z"
+    },
+    {
+      "_id": "67c9d2a09c2c3ca4a79a82a3",
+      "userId": "67c803652961b92b77d26de9",
+      "fileName": "reactJs1",
+      "fileContent": "ReactJS is an open-source JavaScript library developed and maintained by Facebook, designed specifically for building fast, scalable, and interactive user interfaces. It is widely used for creating single-page applications (SPAs) and dynamic web applications due to its efficient rendering and component-based architecture. One of the core features of React is the virtual DOM, which improves performance by updating only the necessary parts of the UI instead of reloading the entire page. This makes React highly efficient, especially for applications that require frequent updates and dynamic content rendering.\r\n\r\nReact follows a component-based architecture, which allows developers to break down the UI into reusable, self-contained components. This modular approach improves code reusability, maintainability, and scalability, making it easier to develop and manage large applications. React also supports one-way data binding, which helps maintain a predictable flow of data, reducing potential errors and making debugging easier.\r\n\r\nAnother key feature of React is state management, which enables developers to handle dynamic data efficiently. While React has built-in state management using the useState and useReducer hooks, more complex applications often use external libraries like Redux, Recoil, or Context API for better state management across multiple components.\r\n\r\nAdditionally, React integrates seamlessly with other modern web technologies. It can be combined with React Router for navigation, Next.js for server-side rendering, and GraphQL for efficient data fetching. React is also widely adopted in mobile app development through React Native, which allows developers to build cross-platform mobile applications using the same React principles.\r\n\r\nWith its vast ecosystem, active community, and continuous updates, ReactJS remains one of the most preferred choices for front-end development, empowering developers to create high-performance, scalable, and engaging web applications.",
+      "createdAt": "2025-03-06T16:51:44.913Z"
+    },
+    {
+      "_id": "67c9d63c6a8aa775ea2c5c8b",
+      "userId": "67c803652961b92b77d26de9",
+      "fileName": "nodeJs",
+      "fileContent": "Node.js is a powerful, open-source JavaScript runtime built on Chrome's V8 engine, designed for building scalable and high-performance applications. It enables server-side execution of JavaScript, allowing developers to use a single language for both frontend and backend development. With its event-driven, non-blocking I/O model, Node.js efficiently handles multiple concurrent requests, making it ideal for real-time applications like chat apps, APIs, and streaming services. It has a vast ecosystem of packages available through npm (Node Package Manager), making development faster and more efficient. Companies like Netflix, LinkedIn, and PayPal use Node.js for its speed, scalability, and lightweight architecture.",
+      "createdAt": "2025-03-06T17:07:08.410Z"
+    },
+    {
+      "_id": "67c9e35bafe7ece2901b32ca",
+      "userId": "67c803652961b92b77d26de9",
+      "fileName": "nodeJs",
+      "fileContent": "",
+      "createdAt": "2025-03-06T18:03:07.882Z"
     }
   ]
 }

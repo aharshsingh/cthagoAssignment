@@ -1,12 +1,22 @@
 {
   "users": [
     {
-      "userId": "67c80910f17e3c6a0b92414f",
+      "userId": "67caa113ca5a24de60640342",
       "userName": "aharsh",
       "email": "aharshsingh25@gmail.com",
-      "password": "e3a2f57765be1c9d3f0dd9db88b312f1ee3168526bbd764adb8fd6cae75b67f80104954e4dc0380552815bd61f3705f2be9af3e2ff303756df4426bcb2f367db",
-      "salt": "99b7f581f0355aff54501678db115cb3",
-      "credits": 20
+      "password": "74c1f1b4216faaf2dceca5928055bed0208b4ca1368033353d2a8b8e6fb81de810fee97d20d07ba6fae1337fbe98b41add9f322ee45bb6c4a4d2abecce8d6f7b",
+      "salt": "9757b25749c1febb3919b04793acc1c5",
+      "credits": 20,
+      "role": "user"
+    },
+    {
+      "userId": "67caa12af94b818eb0174954",
+      "userName": "admin",
+      "email": "admin@gmail.com",
+      "password": "90a78d791e0f9841aa559e67f7e61bfcbe09dd80f810416fc21485a9ff496437cf672db18d96b6410415b5e57e6eef439733e648f1a71286dd1cefb8df18e3b6",
+      "salt": "a2c7fb058483bb1b55793ea02f0e3a41",
+      "credits": 20,
+      "role": "admin"
     }
   ]
 }

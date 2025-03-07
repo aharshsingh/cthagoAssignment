@@ -8,9 +8,9 @@ const AIMatching = require('../utils/AImatching');
 const fileController = {
     async upload(req,res,next){
         try {
-            if (!req.body || req.body.length === 0) {
-                return res.status(400).json({ error: "No file uploaded" });
-            }
+            // if (!req.body || req.body.length === 0) {
+            //     return res.status(400).json({ error: "No file uploaded" });
+            // }
             const userId = req.headers['userid'];
             const fileName = req.headers['filename'];
             fileContent = req.body.toString("utf-8");
@@ -34,14 +34,26 @@ const fileController = {
     async match(req,res,next){
         try {
             const {docId} = req.params;
+            var maxMatch = -1;
+            var maxMatchId;
             const Scan = readFile(FilePath);
             const scan = Scan.scans.find(doc => doc._id === docId);
             if(!scan){
                 return res.json({"error": "File not found"});
             }
-            const match = AIMatching(scan.fileContent);
-            res.json(match);
+            for(let existingFile = 0; existingFile < Scan.scans.length; existingFile++){
+                if(Scan.scans[existingFile]._id !== docId){
+                    var match = await AIMatching(scan.fileContent, Scan.scans[existingFile].fileContent);
+                    if(maxMatch < match){
+                        maxMatch = match;
+                        maxMatchId = Scan.scans[existingFile]._id;
+                    }
+                }
+            }
+            
+            res.json(maxMatch+ " " +maxMatchId);
         } catch (error) {
+            console.log(error)
             return res.json({"error": "Internal server error"})
         }
     }
