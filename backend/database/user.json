@@ -9,7 +9,7 @@
       "credits": 20,
       "role": "user",
       "creditRequest": false,
-      "totalScan": 0
+      "totalScan": 2
     },
     {
       "userId": "67caa12af94b818eb0174954",
@@ -20,7 +20,7 @@
       "credits": 20,
       "role": "admin",
       "creditRequest": false,
-      "totalScan": 0
+      "totalScan": 5
     }
   ]
 }

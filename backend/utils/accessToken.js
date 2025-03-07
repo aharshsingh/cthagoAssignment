@@ -4,18 +4,18 @@ const readFile = require('./readFile');
 const { read } = require("fs");
 const tokenFilePath = path.join(__dirname, "../database/accessToken.json");
 
-function generateAccessToken(userId) {
+function generateAccessToken(userId, role) {
   const randomBytes = crypto.randomBytes(8).toString("hex");
   const timestamp = Date.now();
-  const data = `${userId}:${randomBytes}:${timestamp}`;
+  const data = `${userId}:${role}:${randomBytes}:${timestamp}`;
   return Buffer.from(data).toString("base64");
 }
 
 function decodeAccessToken(token) {
   try {
     const decodedData = Buffer.from(token, "base64").toString("utf8");
-    const [userId, randomBytes, timestamp] = decodedData.split(":");
-    return { userId, randomBytes, timestamp: new Date(Number(timestamp)) };
+    const [userId, role, randomBytes, timestamp] = decodedData.split(":");
+    return { userId, role, randomBytes, timestamp: new Date(Number(timestamp)) };
   } catch (error) {
     return { error: "Invalid or tampered token" };
   }

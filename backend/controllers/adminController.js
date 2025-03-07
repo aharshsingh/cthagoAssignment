@@ -34,13 +34,48 @@ const adminController = {
         }
     },
 
-    async getUserScans(req,res,next){
+    async declineCreditRequest(req,res,next){
         try {
-            
+            const {userId} = req.params;
+            const userIndex = User.users.findIndex(user=> user.userId === userId);
+            if(userIndex){
+                return res.json({error: "user not found"});
+            }
+            User.users[userIndex].creditRequest = false;
+            writeFile(User, userFilePath);
+            res.json({"message": "Request declined!"});
         } catch (error) {
             return res.json({error: 'Internal server error'});
         }
-    }
+    },
+
+    async getUserScans(req,res,next){
+        try {
+            let userScanData = [];
+            User.users.forEach(user => {
+                userScanData.push({remainingCredit: user.credits, totalScan: user.totalScan})
+            });
+            res.status(200).json(userScanData);
+        } catch (error) {
+            return res.status(500).json({error: 'Internal server error'});
+        }
+    },
+
+    async topUsers(req,res,next){
+        try {
+            let count = 0;
+            let sortedUser = User.users.sort((a, b) => b.totalScan - a.totalScan);
+            let result = sortedUser.slice(0, 3).map(user => ({
+                userName: user.userName,
+                totalScan: user.totalScan
+            }));
+            res.status(200).json(result);
+        } catch (error) {
+            return res.status(500).json({error: 'Internal server error'});
+        }
+    },
+
+
 }
 
 module.exports = adminController

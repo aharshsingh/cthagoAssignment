@@ -48,7 +48,7 @@ const fileController = {
                 return res.json({error: 'Insufficient credits'});
             }
             var maxMatch = -1;
-            var maxMatchId;
+            var maxMatchContent;
             const Scan = readFile(FilePath);
             const scan = Scan.scans.find(doc => doc._id === docId);
             if(!scan){
@@ -59,14 +59,14 @@ const fileController = {
                     var match = await AIMatching(scan.fileContent, Scan.scans[existingFile].fileContent);
                     if(maxMatch < match){
                         maxMatch = match;
-                        maxMatchId = Scan.scans[existingFile]._id;
+                        maxMatchContent = Scan.scans[existingFile].fileContent;
                     }
                 }
             }
             User.users[userIndex].credits -= 1;
             User.users[userIndex].totalScan += 1;
             writeFile(User, userFilePath);
-            res.json(maxMatch+ " " +maxMatchId);
+            res.json(maxMatch+ " " +scan.fileContent+ " " +maxMatchContent);
         } catch (error) {
             console.log(error)
             return res.json({"error": "Internal server error"})

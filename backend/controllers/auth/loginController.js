@@ -10,7 +10,7 @@ const generateId = require("../../utils/generateId.js");
 const loginController = {
     async login(req,res,next){
         try {
-            const {email, password} = req.body;
+            const {email, password, role} = req.body;
             let User = readFile(userFilePath);
             const user = User.users.find(user => user.email === email);
             if(!user){
@@ -19,7 +19,10 @@ const loginController = {
             if(!verifyPassword(password, user.password, user.salt)){
                 return res.status(401).json({error: "Invaild password"});
             }
-            const token = generateAccessToken(user.userId);
+            if(user.role !== role){
+                return res.status(401).json({error: "Not authorised"});
+            }
+            const token = generateAccessToken(user.userId, user.role);
             const _id = generateId();
             const newLogin = { 
                 _id,
@@ -29,7 +32,7 @@ const loginController = {
             let accessToken = readFile(accessTokenFilePath);
             accessToken.tokens.push(newLogin)
             writeFile(accessToken, accessTokenFilePath);
-            return res.status(200).json(newLogin);
+            return res.status(200).json({"accessToken": newLogin.accessToken});
         } catch (error) {
             return res.status(500).json({error: "Internal server error"})
         }
