@@ -14,10 +14,10 @@ const loginController = {
             let User = readFile(userFilePath);
             const user = User.users.find(user => user.email === email);
             if(!user){
-                return res.json({"error": "Email not registered"})
+                return res.status(404).json({error: "Email not registered"})
             }
             if(!verifyPassword(password, user.password, user.salt)){
-                return res.json({"error": "invaild password"});
+                return res.status(401).json({error: "Invaild password"});
             }
             const token = generateAccessToken(user.userId);
             const _id = generateId();
@@ -29,9 +29,9 @@ const loginController = {
             let accessToken = readFile(accessTokenFilePath);
             accessToken.tokens.push(newLogin)
             writeFile(accessToken, accessTokenFilePath);
-            return res.json(newLogin);
+            return res.status(200).json(newLogin);
         } catch (error) {
-            return res.json({"error": "Internal server error"})
+            return res.status(500).json({error: "Internal server error"})
         }
     }
 }

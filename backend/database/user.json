@@ -7,7 +7,9 @@
       "password": "74c1f1b4216faaf2dceca5928055bed0208b4ca1368033353d2a8b8e6fb81de810fee97d20d07ba6fae1337fbe98b41add9f322ee45bb6c4a4d2abecce8d6f7b",
       "salt": "9757b25749c1febb3919b04793acc1c5",
       "credits": 20,
-      "role": "user"
+      "role": "user",
+      "creditRequest": false,
+      "totalScan": 0
     },
     {
       "userId": "67caa12af94b818eb0174954",
@@ -16,7 +18,9 @@
       "password": "90a78d791e0f9841aa559e67f7e61bfcbe09dd80f810416fc21485a9ff496437cf672db18d96b6410415b5e57e6eef439733e648f1a71286dd1cefb8df18e3b6",
       "salt": "a2c7fb058483bb1b55793ea02f0e3a41",
       "credits": 20,
-      "role": "admin"
+      "role": "admin",
+      "creditRequest": false,
+      "totalScan": 0
     }
   ]
 }

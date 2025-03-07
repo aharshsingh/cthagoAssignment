@@ -12,7 +12,7 @@ const registerController = {
             let User = readFile(userFilePath);
             const exists = User.users.find(user => user.email === email);
             if(exists){
-                return res.json({"error": "Email is already registered"})
+                return res.status(400).json({"error": "Email is already registered"})
             }
             const { salt, hashedPassword } = hashPassword(password);
             const userId = generateId();
@@ -23,13 +23,15 @@ const registerController = {
                 password: hashedPassword,
                 salt,
                 credits: 20,
-                role: "user"
+                role: "user",
+                creditRequest: false,
+                totalScan: 0
             }
             User.users.push(newUser)
             writeFile(User, userFilePath);
-            return res.json(newUser);
+            return res.status(200).json(newUser);
         } catch (error) {
-            return res.json({"error": "Internal server error"})
+            return res.status(500).json({"error": "Internal server error"})
         }
     }
 }

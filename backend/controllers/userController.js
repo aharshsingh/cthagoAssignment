@@ -8,6 +8,9 @@ const userController = {
             const {userId} = req.params
             const User = readFile(userFilePath);
             let user = User.users.find(user => user.userId === userId);
+            if(!user){
+                return res.json({error: 'User not found'});
+            }
             const { salt, password, ...data } = user;
             user = { ...data };
             const Scan = readFile(scanFilePath);
@@ -18,6 +21,20 @@ const userController = {
         } catch (error) {
             console.log(error)
             return res.json({"error": "Internal server error"});
+        }
+    },
+    async creditRequest(req,res,next){
+        try {
+            const {userId} = req.params;
+            let User = readFile(userFilePath);
+            const userIndex = User.users.findIndex(user=> user.userId === userId);
+            if(!userIndex){
+                return res.json({error: 'User not found'});
+            }
+            User.users[userIndex].creditRequest = true;
+            return res.json({"message": "request was successfull"});
+        } catch (error) {
+            return res.json({error: 'Internal server error'});
         }
     }
 }
