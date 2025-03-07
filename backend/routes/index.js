@@ -15,5 +15,5 @@ router.patch('/approve/:userId',auth, admin, adminController.approveCreditReques
 router.patch('/decline/:userId',auth, admin, adminController.declineCreditRequest);
 router.get('/analytics',auth, admin, adminController.getUserScans);
 router.get('/topusers',auth, admin, adminController.topUsers);
-
+router.get('/topic',auth, admin, adminController.topTopic);
 module.exports = router;

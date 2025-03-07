@@ -17,10 +17,10 @@
       "email": "admin@gmail.com",
       "password": "90a78d791e0f9841aa559e67f7e61bfcbe09dd80f810416fc21485a9ff496437cf672db18d96b6410415b5e57e6eef439733e648f1a71286dd1cefb8df18e3b6",
       "salt": "a2c7fb058483bb1b55793ea02f0e3a41",
-      "credits": 20,
+      "credits": 19,
       "role": "admin",
       "creditRequest": false,
-      "totalScan": 5
+      "totalScan": 6
     }
   ]
 }

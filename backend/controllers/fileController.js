@@ -6,7 +6,7 @@ const FilePath = path.join(__dirname, "../database/scan.json");
 const AIMatching = require('../utils/AImatching');
 const userFilePath = path.join(__dirname, "../database/user.json");
 const AITopicGenerator = require('../utils/AITopicGenerator');
-
+const Scan = readFile(FilePath);
 const fileController = {
     async upload(req,res,next){
         try {
@@ -19,7 +19,6 @@ const fileController = {
             if(!fileContent){
                 return res.status(400).json({error: "File not uploaded"});
             }
-            let Scan = readFile(FilePath);
             const topic = await AITopicGenerator(fileContent);
             const _id = generateId();
             const createdAt = new Date().toISOString();
@@ -52,7 +51,6 @@ const fileController = {
             }
             var maxMatch = -1;
             var maxMatchContent;
-            const Scan = readFile(FilePath);
             const scan = Scan.scans.find(doc => doc._id === docId);
             if(!scan){
                 return res.status(404).json({"error": "File not found"});
@@ -66,12 +64,13 @@ const fileController = {
                     }
                 }
             }
+            scan.popularCount += 1;
+            writeFile(Scan, FilePath)
             User.users[userIndex].credits -= 1;
             User.users[userIndex].totalScan += 1;
             writeFile(User, userFilePath);
             res.status(200).json(maxMatch+ " " +scan.fileContent+ " " +maxMatchContent);
         } catch (error) {
-            console.log(error)
             return res.status(500).json({"error": "Internal server error"})
         }
     }
