@@ -11,8 +11,7 @@ async function AIMatching(content, existingContent) {
                 { role: "system", content: "You are an AI that compares the similarity of the text file." },
                 { role: "user", content: `this is the content of the first file${content} and this is the content of the second file ${existingContent}, after comparison only give reply in number percentage not anyother strings only number!! no special characters as well` }
             ],
-          });
-        console.log('Chat:', chatResponse.choices[0].message.content);   
+          });  
         return chatResponse.choices[0].message.content
     } catch (error) {
         console.error("Error generating question:", error);

@@ -9,11 +9,11 @@ const adminController = {
         try {
             const requestUsers = User.users.filter(user=> user.creditRequest === true);
             if(!requestUsers){
-                return res.json({"message": "no request found"});
+                return res.status(404).json({"message": "no request found"});
             }            
             res.json(requestUsers);
         } catch (error) {
-            return res.json({error: 'Internal server error'});
+            return res.status(500).json({error: 'Internal server error'});
         }
     },
 
@@ -23,14 +23,14 @@ const adminController = {
             const {credits} = req.body;
             const userIndex = User.users.findIndex(user=> user.userId === userId);
             if(userIndex){
-                return res.json({error: "user not found"});
+                return res.status(404).json({error: "user not found"});
             }
-            User.users[userIndex].credits = credits;
+            User.users[userIndex].credits += credits;
             User.users[userIndex].creditRequest = false;
             writeFile(User, userFilePath);
-            res.json({"message": "Request approved!"});
+            res.status(200).json({"message": "Request approved!"});
         } catch (error) {
-            return res.json({error: 'Internal server error'});
+            return res.status(500).json({error: 'Internal server error'});
         }
     },
 
@@ -39,13 +39,13 @@ const adminController = {
             const {userId} = req.params;
             const userIndex = User.users.findIndex(user=> user.userId === userId);
             if(userIndex){
-                return res.json({error: "user not found"});
+                return res.status(404).json({error: "user not found"});
             }
             User.users[userIndex].creditRequest = false;
             writeFile(User, userFilePath);
-            res.json({"message": "Request declined!"});
+            res.status(200).json({"message": "Request declined!"});
         } catch (error) {
-            return res.json({error: 'Internal server error'});
+            return res.status(500).json({error: 'Internal server error'});
         }
     },
 
@@ -74,8 +74,6 @@ const adminController = {
             return res.status(500).json({error: 'Internal server error'});
         }
     },
-
-
 }
 
 module.exports = adminController

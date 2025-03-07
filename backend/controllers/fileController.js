@@ -5,6 +5,7 @@ const path = require('path')
 const FilePath = path.join(__dirname, "../database/scan.json");
 const AIMatching = require('../utils/AImatching');
 const userFilePath = path.join(__dirname, "../database/user.json");
+const AITopicGenerator = require('../utils/AITopicGenerator');
 
 const fileController = {
     async upload(req,res,next){
@@ -19,6 +20,7 @@ const fileController = {
                 return res.status(400).json({error: "File not uploaded"});
             }
             let Scan = readFile(FilePath);
+            const topic = await AITopicGenerator(fileContent);
             const _id = generateId();
             const createdAt = new Date().toISOString();
             Scan.scans.push({
@@ -26,12 +28,13 @@ const fileController = {
                 userId,
                 fileName,
                 fileContent,
+                topic,
+                popularCount: 0,
                 createdAt
-            })
-            writeFile(Scan, FilePath)
-            return res.status(200).json({ message: "File received", content: fileContent, "scanId": _id });
+            });
+            writeFile(Scan, FilePath);
+            return res.status(200).json({ content: fileContent, "scanId": _id });
         } catch (error) {
-            console.log(error);
             return res.status(500).json({"error": "Internal server error"})
         }
     },
@@ -52,7 +55,7 @@ const fileController = {
             const Scan = readFile(FilePath);
             const scan = Scan.scans.find(doc => doc._id === docId);
             if(!scan){
-                return res.json({"error": "File not found"});
+                return res.status(404).json({"error": "File not found"});
             }
             for(let existingFile = 0; existingFile < Scan.scans.length; existingFile++){
                 if(Scan.scans[existingFile]._id !== docId){
@@ -66,10 +69,10 @@ const fileController = {
             User.users[userIndex].credits -= 1;
             User.users[userIndex].totalScan += 1;
             writeFile(User, userFilePath);
-            res.json(maxMatch+ " " +scan.fileContent+ " " +maxMatchContent);
+            res.status(200).json(maxMatch+ " " +scan.fileContent+ " " +maxMatchContent);
         } catch (error) {
             console.log(error)
-            return res.json({"error": "Internal server error"})
+            return res.status(500).json({"error": "Internal server error"})
         }
     }
 }

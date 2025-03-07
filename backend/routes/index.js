@@ -9,9 +9,10 @@ router.post('/login', loginController.login);
 router.post('/upload',auth, fileController.upload);
 router.get('/userprofile/:userId',auth, userController.userProfile);
 router.get('/match/:docId',auth, fileController.match);
-router.patch('/creditRequest/:userId', userController.creditRequest);
+router.patch('/creditRequest/:userId',auth, userController.creditRequest);
 router.get('/getcreditrequest',auth, admin, adminController.getCreditRequest);
-router.post('/approve/:userId',auth, admin, adminController.approveCreditRequest);
+router.patch('/approve/:userId',auth, admin, adminController.approveCreditRequest);
+router.patch('/decline/:userId',auth, admin, adminController.declineCreditRequest);
 router.get('/analytics',auth, admin, adminController.getUserScans);
 router.get('/topusers',auth, admin, adminController.topUsers);
 
