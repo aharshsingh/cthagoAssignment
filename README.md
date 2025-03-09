@@ -19,3 +19,20 @@ This is a Node.js-based backend that manages user credits using a JSON file as a
 3. **Clone the repository**
    ```sh
    node index.js
+
+## Live Link  
+🔗 [DocScanner](https://cthago-assignment.vercel.app/)
+
+## Credentials  
+
+### User Credentials  
+- **Email:** lovedeep24253@gmail.com  
+- **Password:** 123  
+
+### Admin Credentials  
+- **Email:** admin@gmail.com  
+- **Password:** admin123  
+
+## Testing  
+You can find sample text files in the **`testing`** folder, which can be used for testing document uploads and matching.  
+
