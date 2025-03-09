@@ -13,10 +13,10 @@ This is a Node.js-based backend that manages user credits using a JSON file as a
    ```sh
    git clone https://github.com/aharshsingh/cthagoAssignment.git
    cd your-repo
-2. **Clone the repository**
+2. **Dependency Installation**
    ```sh
    npm install
-3. **Clone the repository**
+3. **Start Server**
    ```sh
    node index.js
 
