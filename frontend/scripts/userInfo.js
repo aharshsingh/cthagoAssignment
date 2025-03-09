@@ -18,7 +18,7 @@ async function fetchUserDetails(){
         const data=await response.json();
         requestStatus=data.creditRequest;
         if(response.status === 200)
-        {
+        {   
             renderUserData(data);
         }
         
@@ -33,11 +33,12 @@ async function fetchUserDetails(){
 //---------------------------------------------------------R E N D E R I N G    U S E R    D A T A--------------------------------------------------------
 
 function renderUserData(data){
+    const credit = localStorage.getItem("credits");
     const userName=document.getElementById("userName");
     userName.innerHTML=`${data.userName}`;
 
     const credits=document.getElementById("creditDisplay");
-    credits.innerHTML=`${data.credits}`;
+    credits.innerHTML=`${credit}`;
 
     const pastScansList=document.getElementById("pastScans");
     pastScansList.innerHTML='';

@@ -296,6 +296,60 @@
       "topic": "ReactJS",
       "popularCount": 1,
       "createdAt": "2025-03-09T16:56:22.450Z"
+    },
+    {
+      "_id": "67cdcffdace72a1685962127",
+      "userId": "67caa113ca5a24de60640342",
+      "fileName": "Nextjs.txt",
+      "fileContent": "Next.js is a powerful React framework that enables server-side rendering (SSR) and static site generation (SSG), enhancing performance and SEO. Developed by Vercel, it simplifies building full-stack applications with API routes, dynamic routing, and built-in support for TypeScript. Its automatic code splitting and image optimization improve load times. Next.js also supports incremental static regeneration (ISR), allowing seamless content updates without rebuilding the entire site. With features like middleware, edge functions, and hybrid rendering, it provides flexibility for modern web applications. Ideal for startups and enterprises alike, Next.js streamlines development while ensuring scalability, speed, and a superior user experience.",
+      "topic": "Next.js",
+      "popularCount": 1,
+      "createdAt": "2025-03-09T17:29:33.509Z"
+    },
+    {
+      "_id": "67cdd0e543677918235c066f",
+      "userId": "67caa113ca5a24de60640342",
+      "fileName": "nodejs.txt",
+      "fileContent": "Node.js is a powerful, open-source JavaScript runtime built on Chrome's V8 engine, designed for building scalable and high-performance applications. It enables server-side execution of JavaScript, allowing developers to use a single language for both frontend and backend development. With its event-driven, non-blocking I/O model, Node.js efficiently handles multiple concurrent requests, making it ideal for real-time applications like chat apps, APIs, and streaming services. It has a vast ecosystem of packages available through npm (Node Package Manager), making development faster and more efficient. Companies like Netflix, LinkedIn, and PayPal use Node.js for its speed, scalability, and lightweight architecture.",
+      "topic": "Node.js",
+      "popularCount": 1,
+      "createdAt": "2025-03-09T17:33:25.724Z"
+    },
+    {
+      "_id": "67cdd2c488791c8bb183f642",
+      "userId": "67caa113ca5a24de60640342",
+      "fileName": "react2.txt",
+      "fileContent": "ReactJS is an open-source JavaScript library developed and maintained by Facebook, designed specifically for building fast, scalable, and interactive user interfaces. It is widely used for creating single-page applications (SPAs) and dynamic web applications due to its efficient rendering and component-based architecture. One of the core features of React is the virtual DOM, which improves performance by updating only the necessary parts of the UI instead of reloading the entire page. This makes React highly efficient, especially for applications that require frequent updates and dynamic content rendering.\r\n\r\nReact follows a component-based architecture, which allows developers to break down the UI into reusable, self-contained components. This modular approach improves code reusability, maintainability, and scalability, making it easier to develop and manage large applications. React also supports one-way data binding, which helps maintain a predictable flow of data, reducing potential errors and making debugging easier.\r\n\r\nAnother key feature of React is state management, which enables developers to handle dynamic data efficiently. While React has built-in state management using the useState and useReducer hooks, more complex applications often use external libraries like Redux, Recoil, or Context API for better state management across multiple components.\r\n\r\nAdditionally, React integrates seamlessly with other modern web technologies. It can be combined with React Router for navigation, Next.js for server-side rendering, and GraphQL for efficient data fetching. React is also widely adopted in mobile app development through React Native, which allows developers to build cross-platform mobile applications using the same React principles.\r\n\r\nWith its vast ecosystem, active community, and continuous updates, ReactJS remains one of the most preferred choices for front-end development, empowering developers to create high-performance, scalable, and engaging web applications.",
+      "topic": "ReactJS",
+      "popularCount": 2,
+      "createdAt": "2025-03-09T17:41:24.031Z"
+    },
+    {
+      "_id": "67cdd5a52184efd477457c67",
+      "userId": "67caa113ca5a24de60640342",
+      "fileName": "Nextjs.txt",
+      "fileContent": "Next.js is a powerful React framework that enables server-side rendering (SSR) and static site generation (SSG), enhancing performance and SEO. Developed by Vercel, it simplifies building full-stack applications with API routes, dynamic routing, and built-in support for TypeScript. Its automatic code splitting and image optimization improve load times. Next.js also supports incremental static regeneration (ISR), allowing seamless content updates without rebuilding the entire site. With features like middleware, edge functions, and hybrid rendering, it provides flexibility for modern web applications. Ideal for startups and enterprises alike, Next.js streamlines development while ensuring scalability, speed, and a superior user experience.",
+      "topic": "Next.js",
+      "popularCount": 1,
+      "createdAt": "2025-03-09T17:53:41.886Z"
+    },
+    {
+      "_id": "67cdd6d3c4504e1623f3282f",
+      "userId": "67caa113ca5a24de60640342",
+      "fileName": "nodejs.txt",
+      "fileContent": "Node.js is a powerful, open-source JavaScript runtime built on Chrome's V8 engine, designed for building scalable and high-performance applications. It enables server-side execution of JavaScript, allowing developers to use a single language for both frontend and backend development. With its event-driven, non-blocking I/O model, Node.js efficiently handles multiple concurrent requests, making it ideal for real-time applications like chat apps, APIs, and streaming services. It has a vast ecosystem of packages available through npm (Node Package Manager), making development faster and more efficient. Companies like Netflix, LinkedIn, and PayPal use Node.js for its speed, scalability, and lightweight architecture.",
+      "topic": "Node.js",
+      "popularCount": 1,
+      "createdAt": "2025-03-09T17:58:43.566Z"
+    },
+    {
+      "_id": "67cdd805a35bb643a51d1fc5",
+      "userId": "67caa113ca5a24de60640342",
+      "fileName": "react.txt",
+      "fileContent": "ReactJS is a popular JavaScript library developed by Facebook for building dynamic and interactive user interfaces. It is widely used for creating single-page applications (SPAs) and complex web applications due to its efficient rendering and component-based architecture. React allows developers to build reusable UI components, making development faster and more scalable. One of its key features is the virtual DOM, which optimizes performance by updating only the necessary parts of the user interface instead of reloading the entire page. React also supports state management, making it easy to handle data and user interactions. With its strong ecosystem, including tools like React Router and Redux, ReactJS continues to be a preferred choice for modern web development.",
+      "topic": "ReactJS",
+      "popularCount": 1,
+      "createdAt": "2025-03-09T18:03:49.467Z"
     }
   ]
 }

@@ -47,7 +47,7 @@ async function handleCreditReq()
             alert("You have Requested for Credit already");
             return
         }
-        const response = await fetch(`http://localhost:3000/${userId}`,{
+        const response = await fetch(`http://localhost:3000/creditRequest/${userId}`,{
             method: 'PATCH',
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -92,6 +92,7 @@ async function handleScan(){
     if (response.status === 200) {
         localStorage.setItem("incomingData", data.maxMatchContent);
         localStorage.setItem("matchPer", percent);
+        localStorage.setItem("credits", data.credits);
         // alert("SUCCESS");
         window.location.href = 'scan.html';
     } else {
