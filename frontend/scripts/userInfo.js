@@ -8,7 +8,7 @@ async function fetchUserDetails(){
     const token=localStorage.getItem("token");
     const userId=localStorage.getItem("userId");
     try {
-        const response = await fetch(`http://localhost:3000/userprofile/${userId}`,{
+        const response = await fetch(`https://cthagoassignment.onrender.com/userprofile/${userId}`,{
             method: 'GET',
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -73,7 +73,7 @@ async function handleCreditReq()
             alert("You have Requested for Credit Already");
             return
         }
-        const response = await fetch(`http://localhost:3000/creditRequest/${userId}`,{
+        const response = await fetch(`https://cthagoassignment.onrender.com/creditRequest/${userId}`,{
             method: 'PATCH',
             headers: {
                 "Authorization": `Bearer ${token}`,

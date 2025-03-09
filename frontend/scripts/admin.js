@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 async function getUserStats(){
     const token=localStorage.getItem("token");
     try {
-        const response = await fetch('http://localhost:3000/analytics',{
+        const response = await fetch('https://cthagoassignment.onrender.com/analytics',{
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -59,7 +59,7 @@ function renderUserStats(userData){
 async function fetchTopUsers() {
     const token=localStorage.getItem("token");
     try {
-        const response = await fetch('http://localhost:3000/topusers',{
+        const response = await fetch('https://cthagoassignment.onrender.com/topusers',{
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -95,7 +95,7 @@ function renderTopUsers(users) {
 async function fetchTopTopics() {
     const token=localStorage.getItem("token");
     try {
-        const response = await fetch('http://localhost:3000/topic',{
+        const response = await fetch('https://cthagoassignment.onrender.com/topic',{
             method:"GET",
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -132,7 +132,7 @@ function renderTopTopics(topics) {
 async function fetchUserRequests() {
     const token=localStorage.getItem("token");
     try {
-        const response = await fetch('http://localhost:3000/getcreditrequest',{
+        const response = await fetch('https://cthagoassignment.onrender.com/getcreditrequest',{
             headers: {
                 "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json"
@@ -188,7 +188,7 @@ async function approveUser(userId) {
 try {
     const token=localStorage.getItem("token");
 
-    const response=await fetch(`http://localhost:3000/approve/${userId}`, {
+    const response=await fetch(`https://cthagoassignment.onrender.com/approve/${userId}`, {
         method: 'PATCH',
         headers: {
             "Authorization": `Bearer ${token}`,
@@ -216,7 +216,7 @@ try {
 async function rejectUser(userId) {
     const token=localStorage.getItem("token");
     try {
-        const response=await fetch(`http://localhost:3000/decline/${userId}`, {
+        const response=await fetch(`https://cthagoassignment.onrender.com/decline/${userId}`, {
             method: 'PATCH',
             headers: {
                 "Authorization": `Bearer ${token}`,

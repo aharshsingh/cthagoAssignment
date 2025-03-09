@@ -28,7 +28,7 @@ async function handlelogin(){
         return
     }
 
-    const response = await fetch("http://localhost:3000/login",{
+    const response = await fetch("https://cthagoassignment.onrender.com/login",{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email,password,role})
@@ -77,7 +77,7 @@ async function signup(event) {
     }
     else if(password === confirmpassword)
     {
-        var response = await fetch('http://localhost:3000/register', {
+        var response = await fetch('https://cthagoassignment.onrender.com/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userName,email, password })

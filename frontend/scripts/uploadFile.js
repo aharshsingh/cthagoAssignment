@@ -10,7 +10,7 @@ async function fetchUserDetails(){
     const token=localStorage.getItem("token");
     const userId=localStorage.getItem("userId");
     try {
-        const response = await fetch(`http://localhost:3000/userprofile/${userId}`,{
+        const response = await fetch(`https://cthagoassignment.onrender.com/userprofile/${userId}`,{
             method: 'GET',
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -47,7 +47,7 @@ async function handleCreditReq()
             alert("You have Requested for Credit already");
             return
         }
-        const response = await fetch(`http://localhost:3000/creditRequest/${userId}`,{
+        const response = await fetch(`https://cthagoassignment.onrender.com/creditRequest/${userId}`,{
             method: 'PATCH',
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -79,7 +79,7 @@ async function handleScan(){
  
     const scanBtn=document.getElementById("btn");
     scanBtn.innerHTML="Scanning..."
-    const response = await fetch(`http://localhost:3000/match/${docId}/${userId}`,{
+    const response = await fetch(`https://cthagoassignment.onrender.com/match/${docId}/${userId}`,{
         method: 'GET',
         headers: {
             "Authorization": `Bearer ${token}`,
@@ -136,7 +136,7 @@ async function uploadFile() {
     const token = localStorage.getItem("token"); 
     const userId = localStorage.getItem("userId");
     const fileContent = await file.text(); 
-   const response = await fetch('http://localhost:3000/upload',{
+   const response = await fetch('https://cthagoassignment.onrender.com/upload',{
        method:"POST",
        body:await fileContent,
        headers: {
