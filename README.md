@@ -26,8 +26,8 @@ This is a Node.js-based backend that manages user credits using a JSON file as a
 ## Credentials  
 
 ### User Credentials  
-- **Email:** lovedeep24253@gmail.com  
-- **Password:** 123  
+- **Email:** aharshsingh25@gmail.com  
+- **Password:** aharshsingh25  
 
 ### Admin Credentials  
 - **Email:** admin@gmail.com  
