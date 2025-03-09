@@ -23,7 +23,7 @@ const adminController = {
             const {userId} = req.params;
             const {credits} = req.body;
             const userIndex = User.users.findIndex(user=> user.userId === userId);
-            if(userIndex){
+            if(userIndex<0){
                 return res.status(404).json({error: "user not found"});
             }
             User.users[userIndex].credits += credits;
@@ -39,7 +39,8 @@ const adminController = {
         try {
             const {userId} = req.params;
             const userIndex = User.users.findIndex(user=> user.userId === userId);
-            if(userIndex){
+            console.log(userIndex);
+            if(userIndex<0){
                 return res.status(404).json({error: "user not found"});
             }
             User.users[userIndex].creditRequest = false;
@@ -54,7 +55,7 @@ const adminController = {
         try {
             let userScanData = [];
             User.users.forEach(user => {
-                userScanData.push({remainingCredit: user.credits, totalScan: user.totalScan})
+                userScanData.push({userName:user.userName ,remainingCredit: user.credits, totalScan: user.totalScan})
             });
             return res.status(200).json(userScanData);
         } catch (error) {

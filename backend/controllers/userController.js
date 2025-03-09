@@ -15,7 +15,7 @@ const userController = {
             const { salt, password, ...data } = user;
             user = { ...data };
             const Scan = readFile(scanFilePath);
-            let pastScan = Scan.scans.filter(scan=> scan.userId !== userId);
+            let pastScan = Scan.scans.filter(scan=> scan.userId === userId);
             const scanWithoutContent = pastScan.map(({ fileContent,userId, ...rest }) => rest);
             user = {...user, pastScan: scanWithoutContent};
             return res.status(200).json(user);
@@ -28,7 +28,7 @@ const userController = {
         try {
             const {userId} = req.params;
             const userIndex = User.users.findIndex(user=> user.userId === userId);
-            if(!userIndex){
+            if(userIndex<0){
                 return res.status(404).json({error: 'User not found'});
             }
             User.users[userIndex].creditRequest = true;

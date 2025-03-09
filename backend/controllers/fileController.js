@@ -40,10 +40,10 @@ const fileController = {
     async match(req,res,next){
         try {
             const {docId} = req.params;
-            const {userId} = req.body;
+            const {userId} = req.params;
             let User = readFile(userFilePath);
             let userIndex = User.users.findIndex(user=> user.userId === userId);
-            if(!userIndex){
+            if(userIndex<0){
                 return res.json({error: 'User not found'});
             }
             if(User.users[userIndex].credits <= 0){
@@ -69,8 +69,9 @@ const fileController = {
             User.users[userIndex].credits -= 1;
             User.users[userIndex].totalScan += 1;
             writeFile(User, userFilePath);
-            res.status(200).json(maxMatch+ " " +scan.fileContent+ " " +maxMatchContent);
+            res.status(200).json({maxMatch,scannedFile:scan.fileContent,maxMatchContent});
         } catch (error) {
+            // console.log(error);
             return res.status(500).json({"error": "Internal server error"})
         }
     }

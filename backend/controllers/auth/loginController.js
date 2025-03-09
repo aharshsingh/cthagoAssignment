@@ -17,7 +17,7 @@ const loginController = {
                 return res.status(404).json({error: "Email not registered"})
             }
             if(!verifyPassword(password, user.password, user.salt)){
-                return res.status(401).json({error: "Invaild password"});
+                return res.status(402).json({error: "Invaild password"});
             }
             if(user.role !== role){
                 return res.status(401).json({error: "Not authorised"});
@@ -32,7 +32,7 @@ const loginController = {
             let accessToken = readFile(accessTokenFilePath);
             accessToken.tokens.push(newLogin)
             writeFile(accessToken, accessTokenFilePath);
-            return res.status(200).json({"accessToken": newLogin.accessToken});
+            return res.status(200).json({"accessToken": newLogin.accessToken, "userId":newLogin.userId});
         } catch (error) {
             return res.status(500).json({error: "Internal server error"})
         }
