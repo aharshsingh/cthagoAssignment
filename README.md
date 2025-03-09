@@ -11,7 +11,7 @@ This is a Node.js-based backend that manages user credits using a JSON file as a
 ## ⚙️ Installation & Setup
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/aharshsingh/cthagoAssignment.git
    cd your-repo
 2. **Clone the repository**
    ```sh
